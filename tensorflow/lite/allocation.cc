@@ -56,7 +56,13 @@ FileCopyAllocation::FileCopyAllocation(const char* filename,
     return;
   }
 #undef FILENO
+#ifndef __OPUS__
   buffer_size_bytes_ = sb.st_size;
+#else
+  fseek(file.get(), 0L, SEEK_END);
+  buffer_size_bytes_ = ::ftell(file.get());
+  rewind(file.get());
+#endif
   std::unique_ptr<char[]> buffer(new char[buffer_size_bytes_]);
   if (!buffer) {
     error_reporter_->Report("Malloc of buffer to hold copy of '%s' failed.",

@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Opus">
+      <Configuration>Debug</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Opus">
+      <Configuration>Release</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\tensorflow\lite\allocation.cc" />
+    <Compile Include="..\tensorflow\lite\arena_planner.cc" />
+    <Compile Include="..\tensorflow\lite\c\c_api_internal.c" />
+    <Compile Include="..\tensorflow\lite\core\api\error_reporter.cc" />
+    <Compile Include="..\tensorflow\lite\core\api\flatbuffer_conversions.cc" />
+    <Compile Include="..\tensorflow\lite\core\api\op_resolver.cc" />
+    <Compile Include="..\tensorflow\lite\core\subgraph.cc" />
+    <Compile Include="..\tensorflow\lite\graph_info.cc" />
+    <Compile Include="..\tensorflow\lite\interpreter.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\activations.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\add.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\add_n.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\arg_min_max.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\audio_spectrogram.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\basic_rnn.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\batch_to_space_nd.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\bidirectional_sequence_lstm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\bidirectional_sequence_rnn.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\cast.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\ceil.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\comparisons.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\concatenation.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\conv.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\depthwise_conv.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\dequantize.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\detection_postprocess.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\div.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\eigen_support.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\elementwise.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\embedding_lookup.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\embedding_lookup_sparse.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\exp.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\expand_dims.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\fake_quant.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\fill.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\floor.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\floor_div.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\floor_mod.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\fully_connected.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\gather.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\gather_nd.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\gemm_support.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\hashtable_lookup.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\if.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\kernel_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_internal.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_dct.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_mel_filterbank.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\optimized\neon_tensor_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\quantization_util.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\reference\portable_tensor_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\spectrogram.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\tensor_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\test_util.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\kernel_util.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\l2norm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\local_response_norm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\logical.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\lsh_projection.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\lstm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\lstm_eval.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\maximum_minimum.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\mfcc.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\mirror_pad.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\mul.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\neg.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\one_hot.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pack.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pad.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pooling.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pow.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\range.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\rank.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reduce.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\register.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\register_ref.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reshape.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\resize_bilinear.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\resize_nearest_neighbor.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reverse.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reverse_sequence.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\select.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\shape.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\skip_gram.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\slice.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\space_to_batch_nd.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\space_to_depth.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\sparse_to_dense.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\split.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\split_v.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\squared_difference.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\squeeze.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\strided_slice.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\sub.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\svdf.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\tile.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\topk_v2.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\transpose.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\transpose_conv.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unidirectional_sequence_lstm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unidirectional_sequence_rnn.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unique.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unpack.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\where.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\while.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\zeros_like.cc" />
+    <Compile Include="..\tensorflow\lite\minimal_logging.cc" />
+    <Compile Include="..\tensorflow\lite\minimal_logging_default.cc" />
+    <Compile Include="..\tensorflow\lite\mmap_allocation_disabled.cc" />
+    <Compile Include="..\tensorflow\lite\model.cc" />
+    <Compile Include="..\tensorflow\lite\mutable_op_resolver.cc" />
+    <Compile Include="..\tensorflow\lite\nnapi_delegate_disabled.cc" />
+    <Compile Include="..\tensorflow\lite\optional_debug_tools.cc" />
+    <Compile Include="..\tensorflow\lite\profiling\time.cc" />
+    <Compile Include="..\tensorflow\lite\simple_memory_arena.cc" />
+    <Compile Include="..\tensorflow\lite\stderr_reporter.cc" />
+    <Compile Include="..\tensorflow\lite\string_util.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\farmhash\src\farmhash.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\fft2d\fftsg.c" />
+    <Compile Include="..\tensorflow\lite\util.cc" />
+    <Compile Include="..\tensorflow\lite\examples\minimal\minimal.cc">
+      <ExcludeFromBuild Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">True</ExcludeFromBuild>
+      <ExcludeFromBuild Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">True</ExcludeFromBuild>
+    </Compile>
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_tflite_model.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_model.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_main.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\command_line_flags.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_params.cc" />
+    <Compile Include="..\tensorflow\lite\profiling\profile_summarizer.cc" />
+    <Compile Include="..\tensorflow\core\util\stats_calculator.cc" />
+    <Compile Include="modrec.cpp">
+      <ExcludeFromBuild Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">True</ExcludeFromBuild>
+      <ExcludeFromBuild Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">True</ExcludeFromBuild>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{af4ae2ba-704a-4f85-a8dc-03d9d38b4e69}</ProjectGuid>
+    <AssemblyName>tensorflow-lite</AssemblyName>
+    <Name>tensorflow-lite</Name>
+    <RootNamespace>tensorflow-lite</RootNamespace>
+  </PropertyGroup>
+  <ImportGroup Label="ToolchainOverrideTargets" />
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>True</UseDebugDefaults>
+    <StandardLibrary>MultiThreaded</StandardLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>False</UseDebugDefaults>
+    <StandardLibrary>MultiThreaded</StandardLibrary>
+  </PropertyGroup>
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>3.6</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">
+    <Compile>
+      <PreprocessorDefinitions>_DEBUG;GEMMLOWP_ALLOW_SLOW_SCALAR_FALLBACK</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\flatbuffers\include;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\farmhash\src;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\neon_2_sse;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\gemmlowp;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\absl;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\eigen;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\;C:\ets\tensorflow;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Level1</Optimization>
+    </Compile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions) --threads</AdditionalOptions>
+      <VirtualHeapSize>32768</VirtualHeapSize>
+      <VirtualStackSize>512</VirtualStackSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">
+    <Compile>
+      <PreprocessorDefinitions>NDEBUG;GEMMLOWP_ALLOW_SLOW_SCALAR_FALLBACK</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\flatbuffers\include;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\farmhash\src;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\neon_2_sse;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\gemmlowp;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\absl;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\eigen;C:\ets\tensorflow\tensorflow\lite\tools\make\downloads\;C:\ets\tensorflow;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <Optimization>Level1</Optimization>
+    </Compile>
+    <Link>
+      <VirtualHeapSize>8192</VirtualHeapSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions />
+</Project>
