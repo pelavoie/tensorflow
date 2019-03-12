@@ -33,6 +33,9 @@ limitations under the License.
 #include "tensorflow/lite/tools/benchmark/logging.h"
 #include "tensorflow/lite/tools/evaluation/utils.h"
 
+#ifdef __OPUS__
+#include <octsys.h>
+#endif
 #ifdef GEMMLOWP_PROFILING
 #include "profiling/profiler.h"
 #endif
@@ -411,7 +414,7 @@ void BenchmarkTfLiteModel::ResetInputsAndOutputs() {
 
 void BenchmarkTfLiteModel::Init() {
   std::string graph = params_.Get<std::string>("graph");
-  model_ = tflite::FlatBufferModel::BuildFromFile(graph.c_str());
+  model_ = tflite::FlatBufferModel::VerifyAndBuildFromFile(graph.c_str());
   if (!model_) {
     TFLITE_LOG(FATAL) << "Failed to mmap model " << graph;
   }
@@ -461,7 +464,15 @@ void BenchmarkTfLiteModel::Init() {
                        << " but flags call it " << input.name;
     }
   }
-
+#ifdef __OPUS__
+  tOCTSYS_HEAP_STATS stats;
+  OctSysHeapMemStats(&stats, 0);
+  printf("Heap Stats\n");
+  printf("total size: %d\n", stats.totalSize);
+  printf("used  size: %d\n", stats.usedSize);
+  printf("free  size: %d\n", stats.freeSize);
+  printf("free lsize: %d\n", stats.freeLargestSize);
+#endif
   // Resize all non-string tensors.
   for (int j = 0; j < inputs_.size(); ++j) {
     const InputLayerInfo& input = inputs_[j];
