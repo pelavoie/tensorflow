@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Opus">
+      <Configuration>Debug</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Opus">
+      <Configuration>Release</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{e1b3b93d-1059-47d3-92fe-8e9979a48891}</ProjectGuid>
+    <AssemblyName>absl</AssemblyName>
+    <Name>absl</Name>
+    <RootNamespace>absl</RootNamespace>
+  </PropertyGroup>
+  <ImportGroup Label="ToolchainOverrideTargets" />
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>True</UseDebugDefaults>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>False</UseDebugDefaults>
+  </PropertyGroup>
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>3.6</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">
+    <Compile>
+      <OpusCAdditionalOptions>%(OpusCAdditionalOptions) -funsafe-math-optimizations -ftree-vectorize</OpusCAdditionalOptions>
+      <PreprocessorDefinitions>__BIG_ENDIAN__;_DEBUG</PreprocessorDefinitions>
+      <CppLanguageStandard>gnuc++11</CppLanguageStandard>
+      <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
+    </Compile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">
+    <Compile>
+      <OpusCAdditionalOptions>%(OpusCAdditionalOptions) -funsafe-math-optimizations -ftree-vectorize</OpusCAdditionalOptions>
+      <PreprocessorDefinitions>__BIG_ENDIAN__;NDEBUG</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
+    </Compile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\dynamic_annotations.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\cycleclock.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\low_level_alloc.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\raw_logging.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\scoped_set_env.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\spinlock.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\spinlock_wait.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\sysinfo.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\thread_identity.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\throw_delegate.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\internal\unscaledcycleclock.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\base\log_severity.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\container\internal\hashtablez_sampler.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\container\internal\hashtablez_sampler_force_weak_definition.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\container\internal\raw_hash_set.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\flag.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\internal\commandlineflag.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\internal\program_name.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\internal\registry.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\internal\type_erased.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\internal\usage.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\marshalling.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\parse.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\flags\usage_config.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\hash\internal\city.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\hash\internal\hash.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\hash\internal\print_hash_of.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\numeric\int128.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\ascii.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\charconv.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\escaping.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\charconv_bigint.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\charconv_parse.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\memutil.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\ostringstream.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\pow10_helper.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\str_format\arg.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\str_format\bind.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\str_format\extension.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\str_format\float_conversion.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\str_format\output.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\str_format\parser.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\internal\utf8.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\match.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\numbers.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\string_view.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\str_cat.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\str_replace.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\str_split.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\strings\substitute.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\civil_time.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\clock.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\duration.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\format.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\civil_time_detail.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_fixed.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_format.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_if.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_impl.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_info.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_libc.cc">
+      <OpusCAdditionalOptions Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">%(OpusCAdditionalOptions) -Wno-c++11-narrowing</OpusCAdditionalOptions>
+    </Compile>
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_lookup.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\time_zone_posix.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\internal\cctz\src\zone_info_source.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\time\time.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\types\bad_any_cast.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\types\bad_optional_access.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\absl\absl\types\bad_variant_access.cc" />
+  </ItemGroup>
+  <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions />
+</Project>

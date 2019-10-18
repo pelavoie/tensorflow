@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Opus">
+      <Configuration>Debug</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Opus">
+      <Configuration>Release</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\tensorflow\core\util\stat_summarizer.cc" />
+    <Compile Include="..\tensorflow\lite\profiling\profile_summarizer.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_model.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_params.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_performance_options.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_tflite_model.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_utils.cc" />
+    <Compile Include="..\tensorflow\lite\tools\command_line_flags.cc" />
+    <Compile Include="..\tensorflow\lite\tools\evaluation\utils.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="tensorflow-lite.opusxproj">
+      <Name>tensorflow-lite</Name>
+      <Project>{be1fe98a-00c0-4cb5-8d25-26df17b067f7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{803cae99-d09f-4a33-aae1-4c0d7d34a7df}</ProjectGuid>
+    <AssemblyName>benchmark</AssemblyName>
+    <Name>benchmark</Name>
+    <RootNamespace>benchmark</RootNamespace>
+  </PropertyGroup>
+  <ImportGroup Label="ToolchainOverrideTargets" />
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>True</UseDebugDefaults>
+    <StandardLibrary>MultiThreaded</StandardLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>False</UseDebugDefaults>
+    <StandardLibrary>MultiThreaded</StandardLibrary>
+  </PropertyGroup>
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>3.6</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">
+    <Compile>
+      <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__BIG_ENDIAN__;_DEBUG</PreprocessorDefinitions>
+    </Compile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">
+    <Compile>
+      <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__BIG_ENDIAN__;NDEBUG</PreprocessorDefinitions>
+    </Compile>
+  </ItemDefinitionGroup>
+  <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions />
+</Project>

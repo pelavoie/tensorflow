@@ -434,7 +434,7 @@ TfLiteStatus BenchmarkTfLiteModel::PrepareInputData() {
     } else if (t->type == kTfLiteFloat16) {
       t_data.bytes = sizeof(TfLiteFloat16) * num_elements;
       t_data.data.raw = new char[t_data.bytes];
-#if __GNUC__ && \
+#if __GNUC__ && !defined(__OPUS__)  && \
     (__clang__ || __ARM_FP16_FORMAT_IEEE || __ARM_FP16_FORMAT_ALTERNATIVE)
       // __fp16 is available on Clang or when __ARM_FP16_FORMAT_* is defined.
       std::generate_n(t_data.data.f16, num_elements, []() -> TfLiteFloat16 {
