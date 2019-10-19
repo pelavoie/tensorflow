@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # OpusStudio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "tensorflow-lite", "tensorflow-lite.opusxproj", "{AF4AE2BA-704A-4F85-A8DC-03D9D38B4E69}"
+Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "tensorflow-lite", "tensorflow-lite.opusxproj", "{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Opus = Release|Opus
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF4AE2BA-704A-4F85-A8DC-03D9D38B4E69}.Debug|Opus.ActiveCfg = Debug|Opus
-		{AF4AE2BA-704A-4F85-A8DC-03D9D38B4E69}.Debug|Opus.Build.0 = Debug|Opus
-		{AF4AE2BA-704A-4F85-A8DC-03D9D38B4E69}.Release|Opus.ActiveCfg = Release|Opus
-		{AF4AE2BA-704A-4F85-A8DC-03D9D38B4E69}.Release|Opus.Build.0 = Release|Opus
+		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Debug|Opus.ActiveCfg = Debug|Opus
+		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Debug|Opus.Build.0 = Debug|Opus
+		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Release|Opus.ActiveCfg = Release|Opus
+		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Release|Opus.Build.0 = Release|Opus
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

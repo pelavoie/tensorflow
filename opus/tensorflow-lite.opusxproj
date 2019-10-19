@@ -11,413 +11,162 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="absl.opusxproj">
-      <Name>absl</Name>
-      <Project>{e1b3b93d-1059-47d3-92fe-8e9979a48891}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\tensorflow\lite\allocation.cc" />
     <Compile Include="..\tensorflow\lite\arena_planner.cc" />
-    <Compile Include="..\tensorflow\lite\core\api\error_reporter.cc">
-      <Filter>18ed010d-a67a-472e-b0f7-f3e53df46525</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\core\api\flatbuffer_conversions.cc">
-      <Filter>18ed010d-a67a-472e-b0f7-f3e53df46525</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\core\api\op_resolver.cc">
-      <Filter>18ed010d-a67a-472e-b0f7-f3e53df46525</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\core\api\tensor_utils.cc">
-      <Filter>18ed010d-a67a-472e-b0f7-f3e53df46525</Filter>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">$(IntermediateDirectory)\core_tensor_utils.o</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">$(IntermediateDirectory)\core_tensor_utils.o</ObjectFileName>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\core\subgraph.cc">
-      <Filter>4aecd3d3-ff7b-449f-9f1a-0a3e22bcee71</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\c\c_api_internal.c">
-      <Filter>00d45e0f-52a2-4323-af64-70884961dc29</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\delegates\nnapi\nnapi_delegate_disabled.cc">
-      <Filter>152d0971-f84e-42a3-82be-a7f201f5f373</Filter>
-    </Compile>
+    <Compile Include="..\tensorflow\lite\c\c_api_internal.c" />
+    <Compile Include="..\tensorflow\lite\core\api\error_reporter.cc" />
+    <Compile Include="..\tensorflow\lite\core\api\flatbuffer_conversions.cc" />
+    <Compile Include="..\tensorflow\lite\core\api\op_resolver.cc" />
+    <Compile Include="..\tensorflow\lite\core\subgraph.cc" />
     <Compile Include="..\tensorflow\lite\experimental\resource_variable\resource_variable.cc" />
-    <Compile Include="..\tensorflow\lite\experimental\ruy\allocator.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\blocking_counter.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\block_map.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\context.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\pmu.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\thread_pool.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\trace.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\trmul.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\tune.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\tune_tool.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\experimental\ruy\wait.cc">
-      <Filter>12e1d60f-91dd-4e34-8700-533ac72457e9</Filter>
-    </Compile>
+    <Compile Include="..\tensorflow\lite\experimental\ruy\allocator.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\block_map.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\blocking_counter.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\context.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\detect_dotprod.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\kernel_arm32.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\kernel_arm64.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\pack_arm.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\pmu.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\thread_pool.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\trace.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\trmul.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\tune.cc" />
+    <Compile Include="..\tensorflow\lite\experimental\ruy\wait.cc" />
     <Compile Include="..\tensorflow\lite\external_cpu_backend_context.cc" />
     <Compile Include="..\tensorflow\lite\graph_info.cc" />
     <Compile Include="..\tensorflow\lite\interpreter.cc" />
-    <Compile Include="..\tensorflow\lite\kernels\activations.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\add.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\add_n.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\arg_min_max.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\assign_variable.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\audio_spectrogram.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\basic_rnn.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\batch_to_space_nd.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\bidirectional_sequence_lstm.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\bidirectional_sequence_rnn.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\cast.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\ceil.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\comparisons.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\concatenation.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\conv.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\cpu_backend_context.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\cpu_backend_gemm_eigen.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\depthwise_conv.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\depth_to_space.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\dequantize.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\detection_postprocess.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\div.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\eigen_support.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\elementwise.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\embedding_lookup.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\embedding_lookup_sparse.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\exp.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\expand_dims.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\fake_quant.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\fill.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\floor.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\floor_div.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\floor_mod.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\fully_connected.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\gather.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\gather_nd.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\hashtable_lookup.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\if.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\internal\kernel_utils.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
-    </Compile>
+    <Compile Include="..\tensorflow\lite\kernels\activations.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\add.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\add_n.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\arg_min_max.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\assign_variable.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\audio_spectrogram.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\basic_rnn.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\batch_to_space_nd.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\bidirectional_sequence_lstm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\bidirectional_sequence_rnn.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\cast.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\ceil.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\comparisons.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\concatenation.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\conv.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\cpu_backend_context.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\cpu_backend_gemm_eigen.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\depthwise_conv.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\dequantize.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\detection_postprocess.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\div.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\eigen_support.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\elementwise.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\embedding_lookup.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\embedding_lookup_sparse.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\exp.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\expand_dims.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\fake_quant.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\fill.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\floor.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\floor_div.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\floor_mod.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\fully_connected.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\gather.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\gather_nd.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\hashtable_lookup.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\if.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\kernel_utils.cc" />
     <Compile Include="..\tensorflow\lite\kernels\internal\mfcc.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">$(IntermediateDirectory)\internal_mfcc.o</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">$(IntermediateDirectory)\internal_mfcc.o</ObjectFileName>
     </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_dct.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_mel_filterbank.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\internal\quantization_util.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\internal\reference\portable_tensor_utils.cc">
-      <Filter>b8865d6a-9889-4324-b9e3-af3629a6db36</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\internal\spectrogram.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
-    </Compile>
+    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_dct.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\mfcc_mel_filterbank.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\optimized\neon_tensor_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\optimized\sse_tensor_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\quantization_util.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\reference\portable_tensor_utils.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\internal\spectrogram.cc" />
     <Compile Include="..\tensorflow\lite\kernels\internal\tensor_utils.cc">
-      <Filter>10b87634-cc5d-45a2-a4c2-cfbb83ae2300</Filter>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">$(IntermediateDirectory)\core_tensor_utils.o</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">$(IntermediateDirectory)\core_tensor_utils.o</ObjectFileName>
     </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\kernel_util.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\l2norm.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\local_response_norm.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\logical.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\lsh_projection.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\lstm.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\lstm_eval.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\matrix_diag.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\matrix_set_diag.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\maximum_minimum.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\mfcc.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\mirror_pad.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\mul.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\neg.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\non_max_suppression.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\one_hot.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\pack.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\pad.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\pooling.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\pow.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\quantize.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\range.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\rank.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\read_variable.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\reduce.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\register.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\reshape.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\resize_bilinear.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\resize_nearest_neighbor.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\reverse.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\reverse_sequence.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\rfft2d.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\round.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\select.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\shape.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\skip_gram.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\slice.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\space_to_batch_nd.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\space_to_depth.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\sparse_to_dense.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\split.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\split_v.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\squared_difference.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\squeeze.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\strided_slice.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\sub.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\svdf.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\tile.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\topk_v2.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\transpose.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\transpose_conv.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\unidirectional_sequence_lstm.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\unidirectional_sequence_rnn.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\unique.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\unpack.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\where.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\while.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\kernels\zeros_like.cc">
-      <Filter>393a70b3-45dd-41b3-abb8-21d33908b65b</Filter>
-    </Compile>
+    <Compile Include="..\tensorflow\lite\kernels\internal\test_util.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\kernel_util.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\l2norm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\local_response_norm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\logical.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\lsh_projection.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\lstm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\lstm_eval.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\matrix_diag.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\matrix_set_diag.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\maximum_minimum.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\mfcc.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\mirror_pad.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\mul.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\neg.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\one_hot.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pack.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pad.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pooling.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\pow.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\quantize.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\range.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\rank.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\read_variable.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reduce.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\register.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\register_ref.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reshape.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\resize_bilinear.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\resize_nearest_neighbor.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reverse.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\reverse_sequence.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\rfft2d.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\round.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\select.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\shape.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\skip_gram.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\slice.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\space_to_batch_nd.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\space_to_depth.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\sparse_to_dense.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\split.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\split_v.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\squared_difference.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\squeeze.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\strided_slice.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\sub.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\svdf.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\tile.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\topk_v2.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\transpose.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\transpose_conv.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unidirectional_sequence_lstm.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unidirectional_sequence_rnn.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unique.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\unpack.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\where.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\while.cc" />
+    <Compile Include="..\tensorflow\lite\kernels\zeros_like.cc" />
     <Compile Include="..\tensorflow\lite\minimal_logging.cc" />
     <Compile Include="..\tensorflow\lite\minimal_logging_default.cc" />
-    <Compile Include="..\tensorflow\lite\mmap_allocation.cc" />
+    <Compile Include="..\tensorflow\lite\mmap_allocation_disabled.cc" />
     <Compile Include="..\tensorflow\lite\model.cc" />
     <Compile Include="..\tensorflow\lite\mutable_op_resolver.cc" />
-    <Compile Include="..\tensorflow\lite\nnapi\nnapi_implementation_disabled.cc">
-      <Filter>152d0971-f84e-42a3-82be-a7f201f5f373</Filter>
-    </Compile>
     <Compile Include="..\tensorflow\lite\optional_debug_tools.cc" />
+    <Compile Include="..\tensorflow\lite\profiling\time.cc" />
     <Compile Include="..\tensorflow\lite\simple_memory_arena.cc" />
     <Compile Include="..\tensorflow\lite\stderr_reporter.cc" />
     <Compile Include="..\tensorflow\lite\string_util.cc" />
-    <Compile Include="..\tensorflow\lite\tools\make\downloads\farmhash\src\farmhash.cc">
-      <Filter>91761b95-fde0-48ef-9dc5-8751ed6443a4</Filter>
-    </Compile>
-    <Compile Include="..\tensorflow\lite\tools\make\downloads\fft2d\fftsg.c">
-      <Filter>089dc2ce-09b0-45b0-a922-64908442b301</Filter>
-    </Compile>
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\farmhash\src\farmhash.cc" />
+    <Compile Include="..\tensorflow\lite\tools\make\downloads\fft2d\fftsg.c" />
     <Compile Include="..\tensorflow\lite\tools\make\downloads\flatbuffers\src\util.cpp">
-      <Filter>0521e19b-2a3b-47c4-84f3-cec4fd3c7e28</Filter>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">$(IntermediateDirectory)\fb_util.o</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">$(IntermediateDirectory)\fb_util.o</ObjectFileName>
     </Compile>
     <Compile Include="..\tensorflow\lite\util.cc" />
+    <Compile Include="..\tensorflow\lite\delegates\nnapi\nnapi_delegate_disabled.cc" />
+    <Compile Include="..\tensorflow\lite\nnapi\nnapi_implementation_disabled.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{be1fe98a-00c0-4cb5-8d25-26df17b067f7}</ProjectGuid>
@@ -431,11 +180,13 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>True</UseDebugDefaults>
+    <PlatformToolset>LLVM-3.12.4610.0</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>False</UseDebugDefaults>
+    <PlatformToolset>LLVM-3.12.4610.0</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -449,6 +200,8 @@
       <PreprocessorDefinitions>__BIG_ENDIAN__;_DEBUG</PreprocessorDefinitions>
       <OpusCAdditionalOptions>%(OpusCAdditionalOptions) -funsafe-math-optimizations -ftree-vectorize</OpusCAdditionalOptions>
       <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
+      <Optimization>Level1</Optimization>
+      <CppLanguageStandard>gnuc++11</CppLanguageStandard>
     </Compile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">
@@ -456,6 +209,7 @@
       <PreprocessorDefinitions>__BIG_ENDIAN__;NDEBUG</PreprocessorDefinitions>
       <OpusCAdditionalOptions>%(OpusCAdditionalOptions) -funsafe-math-optimizations -ftree-vectorize</OpusCAdditionalOptions>
       <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
+      <CppLanguageStandard>gnuc++11</CppLanguageStandard>
     </Compile>
   </ItemDefinitionGroup>
   <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />

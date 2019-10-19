@@ -11,13 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\tensorflow\core\util\stat_summarizer.cc" />
-    <Compile Include="..\tensorflow\lite\profiling\profile_summarizer.cc" />
-    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_model.cc" />
-    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_params.cc" />
-    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_performance_options.cc" />
     <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_tflite_model.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_model.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_main.cc" />
+    <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_params.cc" />
     <Compile Include="..\tensorflow\lite\tools\benchmark\benchmark_utils.cc" />
+    <Compile Include="..\tensorflow\lite\profiling\profile_summarizer.cc" />
+    <Compile Include="..\tensorflow\core\util\stats_calculator.cc" />
     <Compile Include="..\tensorflow\lite\tools\command_line_flags.cc" />
     <Compile Include="..\tensorflow\lite\tools\evaluation\utils.cc" />
   </ItemGroup>
@@ -41,12 +41,14 @@
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>True</UseDebugDefaults>
     <StandardLibrary>MultiThreaded</StandardLibrary>
+    <PlatformToolset>LLVM-3.12.4610.0</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>False</UseDebugDefaults>
     <StandardLibrary>MultiThreaded</StandardLibrary>
+    <PlatformToolset>LLVM-3.12.4610.0</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -59,13 +61,28 @@
     <Compile>
       <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>__BIG_ENDIAN__;_DEBUG</PreprocessorDefinitions>
+      <Optimization>Level1</Optimization>
+      <CppLanguageStandard>gnuc++11</CppLanguageStandard>
     </Compile>
+    <Link>
+      <CodeCacheSize>64</CodeCacheSize>
+      <DataCacheSize>64</DataCacheSize>
+      <VirtualStackSize>512</VirtualStackSize>
+      <VirtualHeapSize>32768</VirtualHeapSize>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">
     <Compile>
       <AdditionalIncludeDirectories>..\;..\tensorflow\tensorflow\lite\tools\make\downloads\;..\tensorflow\lite\tools\make\downloads\eigen;..\tensorflow\lite\tools\make\downloads\absl;..\tensorflow\lite\tools\make\downloads\gemmlowp;..\tensorflow\lite\tools\make\downloads\farmhash\src;..\tensorflow\lite\tools\make\downloads\flatbuffers\include;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>__BIG_ENDIAN__;NDEBUG</PreprocessorDefinitions>
+      <CppLanguageStandard>gnuc++11</CppLanguageStandard>
     </Compile>
+    <Link>
+      <CodeCacheSize>64</CodeCacheSize>
+      <DataCacheSize>64</DataCacheSize>
+      <VirtualStackSize>512</VirtualStackSize>
+      <VirtualHeapSize>32768</VirtualHeapSize>
+    </Link>
   </ItemDefinitionGroup>
   <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />
   <ImportGroup Label="ExtensionTargets" />
