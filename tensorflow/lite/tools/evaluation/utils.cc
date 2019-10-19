@@ -15,7 +15,7 @@ limitations under the License.
 
 #include "tensorflow/lite/tools/evaluation/utils.h"
 
-#include <dirent.h>
+//#include <dirent.h>
 #include <sys/stat.h>
 
 #include <algorithm>
@@ -52,24 +52,24 @@ bool ReadFileLines(const std::string& file_path,
 
 TfLiteStatus GetSortedFileNames(const std::string& directory,
                                 std::vector<std::string>* result) {
-  DIR* dir;
-  struct dirent* ent;
-  if (result == nullptr) {
-    return kTfLiteError;
-  }
-  result->clear();
-  std::string dir_path = StripTrailingSlashes(directory);
-  if ((dir = opendir(dir_path.c_str())) != nullptr) {
-    while ((ent = readdir(dir)) != nullptr) {
-      std::string filename(std::string(ent->d_name));
-      if (filename.size() <= 2) continue;
-      result->emplace_back(dir_path + "/" + filename);
-    }
-    closedir(dir);
-  } else {
-    return kTfLiteError;
-  }
-  std::sort(result->begin(), result->end());
+  //DIR* dir;
+  //struct dirent* ent;
+  //if (result == nullptr) {
+  //  return kTfLiteError;
+  //}
+  //result->clear();
+  //std::string dir_path = StripTrailingSlashes(directory);
+  //if ((dir = opendir(dir_path.c_str())) != nullptr) {
+  //  while ((ent = readdir(dir)) != nullptr) {
+  //    std::string filename(std::string(ent->d_name));
+  //    if (filename.size() <= 2) continue;
+  //    result->emplace_back(dir_path + "/" + filename);
+  //  }
+  //  closedir(dir);
+  //} else {
+  //  return kTfLiteError;
+  //}
+  //std::sort(result->begin(), result->end());
   return kTfLiteOk;
 }
 
