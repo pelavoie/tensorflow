@@ -43,3 +43,7 @@ gradleBuild
 Podfile.lock
 Pods
 xcuserdata
+
+/Opus
+/.isense
+/.vs
