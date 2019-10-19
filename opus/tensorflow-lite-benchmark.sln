@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "tensorflow-lite", "tensorflow-lite.opusxproj", "{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}"
 EndProject
-Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "absl", "absl.opusxproj", "{E1B3B93D-1059-47D3-92FE-8E9979A48891}"
-EndProject
 Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "benchmark", "benchmark.opusxproj", "{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Debug|Opus.Build.0 = Debug|Opus
 		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Release|Opus.ActiveCfg = Release|Opus
 		{BE1FE98A-00C0-4CB5-8D25-26DF17B067F7}.Release|Opus.Build.0 = Release|Opus
-		{E1B3B93D-1059-47D3-92FE-8E9979A48891}.Debug|Opus.ActiveCfg = Debug|Opus
-		{E1B3B93D-1059-47D3-92FE-8E9979A48891}.Debug|Opus.Build.0 = Debug|Opus
-		{E1B3B93D-1059-47D3-92FE-8E9979A48891}.Release|Opus.ActiveCfg = Release|Opus
-		{E1B3B93D-1059-47D3-92FE-8E9979A48891}.Release|Opus.Build.0 = Release|Opus
 		{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}.Debug|Opus.ActiveCfg = Debug|Opus
 		{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}.Debug|Opus.Build.0 = Debug|Opus
 		{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}.Release|Opus.ActiveCfg = Release|Opus
