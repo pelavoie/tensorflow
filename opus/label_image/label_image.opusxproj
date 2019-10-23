@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Opus">
+      <Configuration>Debug</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Opus">
+      <Configuration>Release</Configuration>
+      <Platform>Opus</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{d99990e7-22f2-4be9-95b2-4077c4afcbf7}</ProjectGuid>
+    <AssemblyName>label_image</AssemblyName>
+    <Name>label_image</Name>
+    <RootNamespace>label_image</RootNamespace>
+  </PropertyGroup>
+  <ImportGroup Label="ToolchainOverrideTargets" />
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>True</UseDebugDefaults>
+    <StandardLibrary>MultiThreaded</StandardLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <Architecture>Opus3</Architecture>
+    <UseDebugDefaults>False</UseDebugDefaults>
+  </PropertyGroup>
+  <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>3.6</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Opus'">
+    <Compile>
+      <AdditionalIncludeDirectories>..\..\;..\..\tensorflow\tensorflow\lite\tools\make\downloads\;..\..\tensorflow\lite\tools\make\downloads\eigen;..\..\tensorflow\lite\tools\make\downloads\absl;..\..\tensorflow\lite\tools\make\downloads\gemmlowp;..\..\tensorflow\lite\tools\make\downloads\farmhash\src;..\..\tensorflow\lite\tools\make\downloads\flatbuffers\include</AdditionalIncludeDirectories>
+      <Optimization>Level1</Optimization>
+      <PreprocessorDefinitions>__BIG_ENDIAN__;_DEBUG</PreprocessorDefinitions>
+    </Compile>
+    <Link>
+      <CodeCacheSize>64</CodeCacheSize>
+      <DataCacheSize>64</DataCacheSize>
+      <VirtualStackSize>512</VirtualStackSize>
+      <VirtualHeapSize>32768</VirtualHeapSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Opus'">
+    <Compile>
+      <AdditionalIncludeDirectories>..\..\;..\..\tensorflow\tensorflow\lite\tools\make\downloads\;..\..\tensorflow\lite\tools\make\downloads\eigen;..\..\tensorflow\lite\tools\make\downloads\absl;..\..\tensorflow\lite\tools\make\downloads\gemmlowp;..\..\tensorflow\lite\tools\make\downloads\farmhash\src;..\..\tensorflow\lite\tools\make\downloads\flatbuffers\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__BIG_ENDIAN__;NDEBUG</PreprocessorDefinitions>
+    </Compile>
+    <Link>
+      <CodeCacheSize>64</CodeCacheSize>
+      <DataCacheSize>64</DataCacheSize>
+      <VirtualStackSize>512</VirtualStackSize>
+      <VirtualHeapSize>32768</VirtualHeapSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Compile Include="..\..\tensorflow\lite\examples\label_image\bitmap_helpers.cc" />
+    <Compile Include="..\..\tensorflow\lite\examples\label_image\label_image.cc" />
+    <Compile Include="..\..\tensorflow\lite\tools\evaluation\utils.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tensorflow-lite.opusxproj">
+      <Name>tensorflow-lite</Name>
+      <Project>{be1fe98a-00c0-4cb5-8d25-26df17b067f7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions />
+</Project>

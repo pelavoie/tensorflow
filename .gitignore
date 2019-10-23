@@ -44,6 +44,6 @@ Podfile.lock
 Pods
 xcuserdata
 
-/Opus
-/.isense
-/.vs
+opus/**/Opus
+opus/**/.isense
+opus/**/.vs

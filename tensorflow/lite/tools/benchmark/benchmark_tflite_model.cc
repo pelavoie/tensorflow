@@ -452,6 +452,19 @@ void BenchmarkTfLiteModel::Init() {
         << " expected: " << inputs_.size();
   }
 
+  // If the system is big endian then convert weights from the flatbuffer from
+  // little to big endian on startup so that it does not need to be done during
+  // inference.
+  // NOTE: This requires that the flatbuffer is held in memory which can be
+  // modified by this process.
+  if (!FLATBUFFERS_LITTLEENDIAN) {
+	  for (int t = 0; t < interpreter_->tensors_size(); ++t) {
+		  TfLiteTensor* thisTensor = interpreter_->tensor(t);
+		  if (thisTensor->allocation_type == kTfLiteMmapRo)
+			interpreter_->CorrectTensorEndianness(thisTensor);
+	  }
+  }
+
   // Check if the tensor names match, and log a warning if it doesn't.
   // TODO(ycling): Consider to make this an error again when the new converter
   // create tensors with consistent naming.

@@ -7,6 +7,8 @@ Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "tensorflow-lite", "tensorfl
 EndProject
 Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "benchmark", "benchmark.opusxproj", "{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}"
 EndProject
+Project("{F7C66CDC-67D7-4D1F-AAA5-AF54F0881584}") = "label_image", "label_image\label_image.opusxproj", "{D99990E7-22F2-4BE9-95B2-4077C4AFCBF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Opus = Debug|Opus
@@ -21,6 +23,10 @@ Global
 		{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}.Debug|Opus.Build.0 = Debug|Opus
 		{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}.Release|Opus.ActiveCfg = Release|Opus
 		{803CAE99-D09F-4A33-AAE1-4C0D7D34A7DF}.Release|Opus.Build.0 = Release|Opus
+		{D99990E7-22F2-4BE9-95B2-4077C4AFCBF7}.Debug|Opus.ActiveCfg = Debug|Opus
+		{D99990E7-22F2-4BE9-95B2-4077C4AFCBF7}.Debug|Opus.Build.0 = Debug|Opus
+		{D99990E7-22F2-4BE9-95B2-4077C4AFCBF7}.Release|Opus.ActiveCfg = Release|Opus
+		{D99990E7-22F2-4BE9-95B2-4077C4AFCBF7}.Release|Opus.Build.0 = Release|Opus
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

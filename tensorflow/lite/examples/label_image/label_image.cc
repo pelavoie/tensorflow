@@ -161,7 +161,18 @@ void RunInference(Settings* s) {
     LOG(FATAL) << "Failed to construct interpreter\n";
     exit(-1);
   }
-
+  // If the system is big endian then convert weights from the flatbuffer from
+  // little to big endian on startup so that it does not need to be done during
+  // inference.
+  // NOTE: This requires that the flatbuffer is held in memory which can be
+  // modified by this process.
+  if (!FLATBUFFERS_LITTLEENDIAN) {
+	  for (int t = 0; t < interpreter->tensors_size(); ++t) {
+		  TfLiteTensor* thisTensor = interpreter->tensor(t);
+		  if (thisTensor->allocation_type == kTfLiteMmapRo)
+			  interpreter->CorrectTensorEndianness(thisTensor);
+	  }
+  }
   interpreter->UseNNAPI(s->old_accel);
   interpreter->SetAllowFp16PrecisionForFp32(s->allow_fp16);
 

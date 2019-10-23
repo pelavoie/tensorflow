@@ -125,6 +125,11 @@ class Interpreter {
   Interpreter(const Interpreter&) = delete;
   Interpreter& operator=(const Interpreter&) = delete;
 
+  void CorrectTensorEndianness(TfLiteTensor* tensorCorr);
+
+  template<class T>
+  void CorrectTensorDataEndianness(T* data, int32_t size);
+
   // Functions to build interpreter
 #ifndef DOXYGEN_SKIP
   /// Provide a list of tensor indexes that are inputs to the model.
