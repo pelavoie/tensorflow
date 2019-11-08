@@ -23,6 +23,7 @@ limitations under the License.
 #include <unordered_set>
 #include <vector>
 
+#include "tensorflow/lite/optional_debug_tools.h"
 #include "tensorflow/lite/kernels/register.h"
 #include "tensorflow/lite/model.h"
 #include "tensorflow/lite/op_resolver.h"
@@ -33,9 +34,6 @@ limitations under the License.
 #include "tensorflow/lite/tools/benchmark/logging.h"
 #include "tensorflow/lite/tools/evaluation/utils.h"
 
-#ifdef __OPUS__
-#include <octsys.h>
-#endif
 #ifdef GEMMLOWP_PROFILING
 #include "profiling/profiler.h"
 #endif
@@ -464,6 +462,18 @@ void BenchmarkTfLiteModel::Init() {
 			interpreter_->CorrectTensorEndianness(thisTensor);
 	  }
   }
+  int t_size = interpreter_->tensors_size();
+  for (int i = 0; i < t_size; i++) {
+	  if (interpreter_->tensor(i)->name)
+		  TFLITE_LOG(INFO) << i << ": " << interpreter_->tensor(i)->name << ", "
+					<< interpreter_->tensor(i)->bytes << ", "
+					<< interpreter_->tensor(i)->type << ", "
+					<< interpreter_->tensor(i)->quantization.type << ", "
+					<< interpreter_->tensor(i)->params.scale << ", "
+					<< interpreter_->tensor(i)->params.zero_point << "\n";
+  }
+
+  tflite::PrintInterpreterState(interpreter_.get());
 
   // Check if the tensor names match, and log a warning if it doesn't.
   // TODO(ycling): Consider to make this an error again when the new converter
@@ -477,15 +487,7 @@ void BenchmarkTfLiteModel::Init() {
                        << " but flags call it " << input.name;
     }
   }
-#ifdef __OPUS__
-  tOCTSYS_HEAP_STATS stats;
-  OctSysHeapMemStats(&stats, 0);
-  printf("Heap Stats\n");
-  printf("total size: %d\n", stats.totalSize);
-  printf("used  size: %d\n", stats.usedSize);
-  printf("free  size: %d\n", stats.freeSize);
-  printf("free lsize: %d\n", stats.freeLargestSize);
-#endif
+
   // Resize all non-string tensors.
   for (int j = 0; j < inputs_.size(); ++j) {
     const InputLayerInfo& input = inputs_[j];
