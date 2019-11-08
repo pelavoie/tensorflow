@@ -186,7 +186,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>False</UseDebugDefaults>
-    <PlatformToolset>LLVM-3.12.4610.0</PlatformToolset>
+    <PlatformToolset>LLVM</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -214,24 +214,5 @@
   </ItemDefinitionGroup>
   <Import Project="$(OpusTargetsPath)Opus.Cpp.Targets" />
   <ImportGroup Label="ExtensionTargets" />
-  <ProjectExtensions>
-    <OpusStudio>
-      <Filter id="00d45e0f-52a2-4323-af64-70884961dc29" Name="c" Type="filter" />
-      <Filter id="4aecd3d3-ff7b-449f-9f1a-0a3e22bcee71" Name="core" Type="filter">
-        <Filter id="18ed010d-a67a-472e-b0f7-f3e53df46525" Name="api" Type="filter" />
-      </Filter>
-      <Filter id="54136cd4-c7d5-483c-b9e5-6088888f9dfa" Name="experimental" Type="filter">
-        <Filter id="12e1d60f-91dd-4e34-8700-533ac72457e9" Name="ruy" Type="filter" />
-      </Filter>
-      <Filter id="91761b95-fde0-48ef-9dc5-8751ed6443a4" Name="farmhash" Type="filter" />
-      <Filter id="089dc2ce-09b0-45b0-a922-64908442b301" Name="fft2d" Type="filter" />
-      <Filter id="0521e19b-2a3b-47c4-84f3-cec4fd3c7e28" Name="flatbuffers" Type="filter" />
-      <Filter id="393a70b3-45dd-41b3-abb8-21d33908b65b" Name="kernels" Type="filter">
-        <Filter id="10b87634-cc5d-45a2-a4c2-cfbb83ae2300" Name="internal" Type="filter">
-          <Filter id="b8865d6a-9889-4324-b9e3-af3629a6db36" Name="reference" Type="filter" />
-        </Filter>
-      </Filter>
-      <Filter id="152d0971-f84e-42a3-82be-a7f201f5f373" Name="nnapi" Type="filter" />
-    </OpusStudio>
-  </ProjectExtensions>
+  <ProjectExtensions />
 </Project>
