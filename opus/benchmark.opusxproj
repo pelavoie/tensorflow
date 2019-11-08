@@ -48,7 +48,7 @@
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>False</UseDebugDefaults>
     <StandardLibrary>MultiThreaded</StandardLibrary>
-    <PlatformToolset>LLVM-3.12.4610.0</PlatformToolset>
+    <PlatformToolset>LLVM</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
