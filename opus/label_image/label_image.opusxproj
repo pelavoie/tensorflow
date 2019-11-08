@@ -28,6 +28,8 @@
     <ConfigurationType>Application</ConfigurationType>
     <Architecture>Opus3</Architecture>
     <UseDebugDefaults>False</UseDebugDefaults>
+    <StandardLibrary>MultiThreaded</StandardLibrary>
+    <WholeProgramOptimization>UseLTO</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(OpusTargetsPath)\Opus.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -45,7 +47,7 @@
     <Link>
       <CodeCacheSize>64</CodeCacheSize>
       <DataCacheSize>64</DataCacheSize>
-      <VirtualStackSize>512</VirtualStackSize>
+      <VirtualStackSize>32768</VirtualStackSize>
       <VirtualHeapSize>32768</VirtualHeapSize>
     </Link>
   </ItemDefinitionGroup>
@@ -57,7 +59,7 @@
     <Link>
       <CodeCacheSize>64</CodeCacheSize>
       <DataCacheSize>64</DataCacheSize>
-      <VirtualStackSize>512</VirtualStackSize>
+      <VirtualStackSize>32768</VirtualStackSize>
       <VirtualHeapSize>32768</VirtualHeapSize>
     </Link>
   </ItemDefinitionGroup>
